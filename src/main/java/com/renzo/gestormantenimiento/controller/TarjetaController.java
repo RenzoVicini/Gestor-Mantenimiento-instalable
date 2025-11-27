@@ -13,7 +13,7 @@ import java.util.List;
 @CrossOrigin(origins = "*") // permite conexión desde el frontend
 public class TarjetaController {
 
-    //Esta es una prueba de Github
+
     private final TarjetaService service;
 
     public TarjetaController(TarjetaService service) {

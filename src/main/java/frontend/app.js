@@ -1,6 +1,7 @@
 /* ============================================================
    VALIDACIÓN DE PATENTES Y FORMATO DE FECHAS
    ============================================================ */
+
 // Valida en vivo los formatos de patente Argentina (ABC123 o AB123CD)
 function validatePatenteInput(input) {
     let v = input.value.toUpperCase().replace(/[^A-Z0-9]/g, "");
@@ -64,7 +65,6 @@ function formatearFecha(fechaISO) {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-    // Inject Close-Card Modal dynamically
     const closeModalHTML = `
         <div id="closeCardModal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.6); justify-content:center; align-items:center; z-index:2000;">
             <div style="background:#1B2537; padding:20px; border-radius:12px; width:320px; box-shadow:0 4px 18px rgba(0,0,0,0.4);">
@@ -171,6 +171,7 @@ document.addEventListener("DOMContentLoaded", () => {
 /* ============================================================
    CARGA Y ACTUALIZACIÓN DE TABLEROS
    ============================================================ */
+
 function actualizarTablas() {
     cargarTabla("SOLICITUD", "tabla-solicitud");
     cargarTabla("PROGRAMADO", "tabla-programado");
@@ -203,6 +204,7 @@ function cargarTabla(estado, tablaId) {
 /* ============================================================
    RENDERIZADO DE TARJETAS SEGÚN ESTADO
    ============================================================ */
+
 function renderCardSolicitud(t) {
     return `
     <div class="card">
@@ -295,8 +297,9 @@ function renderCardCerrada(t) {
 }
 
 /* ============================================================
-   ACCIONES POR ESTADO (OPCIONAL)
+   ACCIONES POR ESTADO (opcional)
    ============================================================ */
+
 function obtenerAcciones(t) {
     if (t.estado === "SOLICITUD") {
         return `<button onclick="programar(${t.id})">Programar</button>`;
@@ -313,6 +316,7 @@ function obtenerAcciones(t) {
 /* ============================================================
    CONTROL DE MODAL DE FECHAS
    ============================================================ */
+
 function abrirDateModal(id, tipo) {
     const modal = document.getElementById("dateModal");
     modal.style.display = "flex";

@@ -15,7 +15,7 @@ body {
 
 .header-bar {
     width: 100%;
-    background-color: #192237; /* slightly lighter than the page background */
+    background-color: #192237;
     padding: 20px 0;
     border-radius: 12px;
     margin-bottom: 20px;
@@ -55,7 +55,7 @@ body {
     padding-bottom: 8px;
 }
 
-/* ===== TABLES (SIMPLIFIED DARK MODE) ===== */
+/* ===== TABLAS===== */
 table {
     width: 100%;
     border-collapse: separate;
@@ -80,7 +80,7 @@ td {
     color: #d9d9d9;
 }
 
-/* Remove last border in table */
+
 tr:last-child td {
     border-bottom: none;
 }
@@ -214,7 +214,7 @@ input:hover{
 }
 
 .btn-secondary:hover {
-    background-color: #cc0000; /* red hover */
+    background-color: #cc0000;
     transform: scale(1.05);
 }
 .btn-secondary:active {
@@ -226,9 +226,6 @@ input:hover{
     background:#3a3a3a;
 }
 
-/* ============================================================
-   FIN DEL ARCHIVO DE ESTILOS
-   ============================================================ */
 #cancelarFechaBtn:hover {
     background-color:#cc0000 !important;
     transform: scale(1.05);

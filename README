@@ -1,0 +1,143 @@
+# Gestor de Mantenimiento de Flotas  
+Aplicación web desarrollada como trabajo práctico para la materia Taller de Construcción de Software.
+El sistema permite gestionar el ciclo completo de mantenimiento de una flota logística de camiones mediante un tablero visual organizado en columnas y tarjetas.
+
+---
+
+## 🚀 Tecnologías utilizadas
+
+### **Backend**
+- Spring Boot 3
+- Spring Web
+- Spring Data JPA
+- Hibernate
+- Base de datos H2 (no requiere instalación, da portabilidad para la entrega ) (MySQL para version original)
+- Java 21
+
+### Frontend
+- HTML5 + CSS3 + JavaScript
+- Fetch API REST
+- UI personalizada basada en prototipo de Figma
+
+### Arquitectura
+Arquitectura por capas:
+- Controller — expone endpoints REST
+- Service — lógica de negocio
+- Repository — acceso a datos con Spring Data JPA
+- Entity — modelo persistente Tarjeta
+
+---
+
+### Funcionalidades principales
+
+## Crear solicitud de revisión
+- Ingresar patente (validada con formatos argentinos: ABC123 / AB123CD)  
+- Ingresar descripción con contador de caracteres  
+- La tarjeta aparece en la columna "Solicitudes de revisión", ordenada por fecha (más antigua primero).
+
+---
+
+## ✔ Programar mantenimiento
+- Desde la columna "Solicitudes de revisión" se puede programar una fecha.  
+- La tarjeta pasa a "Mantenimiento programado", ordenada por fecha más próxima.
+
+---
+
+## ✔ Reprogramar fecha
+- La fecha puede modificarse haciendo clic sobre ella.  
+- Al cambiarla, se reordena automáticamente.
+
+---
+
+## ✔ Cerrar tarjeta
+En la columna "Mantenimiento programado", se puede cerrar una tarjeta indicando:
+- Mantenimiento finalizado en tiempo y forma
+- Tarjeta desestimada
+- Tarjeta vencida (si pasa 1 semana sin actualizaciones → cierre automático)
+
+La tarjeta pasa a la columna "Tarjetas cerradas", ordenadas por fecha de cierre (más recientes primero).
+
+---
+
+### ✔ Interfaz gráfica moderna  
+El frontend incluye:
+- Tarjetas con diseño moderno inspirado en Figma  
+- Botones con animaciones y efectos hover  
+- Formularios desplegables  
+- Estilos mejorados y responsivos  
+
+---
+
+## 🛠 Cómo ejecutar el proyecto (instalación fácil) - GUIA DE INSTALACION
+
+Este repositorio está configurado para que cualquier usuario pueda ejecutarlo sin instalar bases de datos.
+
+### ✔ Requisitos
+- Java 17 o superior (Java 21 recomendado)
+- IntelliJ IDEA (o cualquier IDE con soporte para Gradle)
+
+### ✔ Pasos
+
+1. Clonar el repositorio:
+
+   https://github.com/RenzoVicini/Gestor-Mantenimiento-instalable.git
+
+
+2. Clonar en IntelliJ IDEA
+   - IntelliJ detectará el proyecto Gradle automáticamente.
+
+3. Ejecutar la aplicación
+   - Abrir la clase:
+
+     GestorMantenimientoFlotasApplication
+
+   - Presionar Run ▶️ (no saltarse este paso!)
+
+4. Acceder a la interfaz
+   - Abrir el archivo:
+
+     index.html
+
+     en la carpeta:
+     src/main/java/frontend/index.html
+
+   - Hacer click en "Open in Browser"
+
+### ✔ Base de datos H2 incluida
+No es necesario instalar ni configurar nada.  
+La base se crea sola en memoria cada vez que se ejecuta el proyecto.
+
+El proyecto original utiliza MySQL para la base de datos.
+
+---
+
+## 📁 Estructura del proyecto
+
+src/
+ └── main/
+     ├── java/com/renzo/gestormantenimiento/
+     │    ├── controller/     # Endpoints REST
+     │    ├── service/        # Lógica de negocio
+     │    ├── repository/     # Acceso JPA
+     │    └── model/         # Entidad Tarjeta
+     ├── frontend/
+     │    ├── app.js / index.html / styles.css       # Frontend (HTML, CSS, JS)
+     ├── application.properties
+
+
+---
+
+- Proyecto listo para ejecutar sin dependencias externas  
+- CRUD completo implementado vía REST  
+- Validaciones en frontend y backend  
+- Arquitectura por capas
+- Código comentado y organizado
+
+---
+
+## 📄 Autores
+Renzo L. Vicini S. y Maria P. Imberti
+
+Estudiantes de Ingeniería en Software — Universidad Siglo 21
+
+Noviembre 2025
